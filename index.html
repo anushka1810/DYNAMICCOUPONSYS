@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupon Management System | Admin Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-image {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg,rgb(229, 170, 82),rgb(239, 247, 85));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-indigo-600 shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-ticket-alt text-white text-2xl"></i>
+                    <span class="text-white font-bold text-xl">CouponSys</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-white hover:text-indigo-100 transition duration-300">Features</a>
+                    <a href="#stats" class="text-white hover:text-indigo-100 transition duration-300">Stats</a>
+                    <a href="#testimonials" class="text-white hover:text-indigo-100 transition duration-300">Testimonials</a>
+                </div>
+                <div>
+                    <a href="login.php" 
+                       class="bg-white text-indigo-600 px-4 py-2 rounded-md font-medium hover:bg-indigo-50 transition duration-300 shadow hover:shadow-md">
+                        Admin Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        <span class="gradient-text">Dynamic Coupon</span> Management System
+                    </h1>
+                    <p class="text-xl mb-8 max-w-2xl mx-auto lg:mx-0">
+                        Create, manage, and track coupon campaigns with our powerful admin dashboard designed for businesses of all sizes.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="login.php" 
+                           class="bg-white text-indigo-600 px-6 py-3 rounded-md font-bold hover:bg-indigo-50 transition duration-300 text-lg shadow-lg hover:shadow-xl">
+                            Access Admin Panel <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#features" 
+                           class="bg-transparent border-2 border-white px-6 py-3 rounded-md font-bold hover:bg-white hover:bg-opacity-10 transition duration-300 text-lg">
+                            Learn More <i class="fas fa-chevron-down ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <img src="dynamic-coupons.png" alt="Dashboard illustration" class="hero-image w-full max-w-md rounded-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-indigo-600 font-semibold">POWERFUL FEATURES</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Everything You Need to Manage Coupons</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Our comprehensive platform provides all the tools to create, manage, and optimize your coupon campaigns.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 feature-card border border-gray-100">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Dynamic Generation</h3>
+                    <p class="text-gray-600 mb-4">
+                        Generate unique coupon codes automatically with customizable patterns and rules.
+                    </p>
+                    <img src="https://illustrations.popsy.co/amber/designer.svg" alt="Dynamic Generation" class="w-full mt-4 rounded-lg">
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 feature-card border border-gray-100">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Real-time Analytics</h3>
+                    <p class="text-gray-600 mb-4">
+                        Track redemption rates, user engagement, and campaign performance in real-time.
+                    </p>
+                    <img src="https://i.pinimg.com/736x/f1/b7/1e/f1b71e4d082853f9d85be0552bd09ad5.jpg" alt="Analytics" class="w-full mt-4 rounded-lg h-auto">
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 feature-card border border-gray-100">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-cog text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Advanced Controls</h3>
+                    <p class="text-gray-600 mb-4">
+                        Set expiration dates, usage limits, and target specific customer segments.
+                    </p>
+                    <img src="https://i.pinimg.com/736x/6f/2b/8b/6f2b8be762b5aff31f4493fdebb330be.jpg" alt="can't load" class="w-full mt-4 rounded-lg h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="py-16 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="dashboardimage.jpg" alt="Dashboard demo" class="rounded-lg shadow-2xl border border-gray-200 h-full w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <span class="text-indigo-600 font-semibold">INTUITIVE INTERFACE</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-4">Beautiful, Easy-to-Use Dashboard</h2>
+                    <p class="text-gray-600 mb-6">Our admin panel is designed with user experience in mind, making coupon management effortless and enjoyable.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Drag-and-drop campaign builder</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-3"></i>
+                            <span class="text-gray-700">One-click coupon generation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Customizable reporting dashboards</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-600 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Mobile-responsive design</span>
+                        </li>
+                    </ul>
+                    <a href="login.php" class="mt-8 inline-block bg-indigo-600 text-white px-6 py-3 rounded-md font-bold hover:bg-indigo-700 transition duration-300 text-lg shadow hover:shadow-md">
+                        Try Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-indigo-600 font-semibold">BY THE NUMBERS</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Proven Results for Businesses</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Our platform delivers measurable impact for companies of all sizes.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+                <div class="bg-white p-8 rounded-xl shadow hover:shadow-lg transition duration-300">
+                    <div class="text-indigo-600 text-5xl font-bold mb-2" id="couponsCreated">0</div>
+                    <div class="text-gray-600 font-medium">Coupons Created</div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow hover:shadow-lg transition duration-300">
+                    <div class="text-indigo-600 text-5xl font-bold mb-2" id="redemptionRate">0%</div>
+                    <div class="text-gray-600 font-medium">Avg. Redemption Rate</div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow hover:shadow-lg transition duration-300">
+                    <div class="text-indigo-600 text-5xl font-bold mb-2" id="activeCampaigns">0</div>
+                    <div class="text-gray-600 font-medium">Active Campaigns</div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow hover:shadow-lg transition duration-300">
+                    <div class="text-indigo-600 text-5xl font-bold mb-2" id="savedRevenue">$0</div>
+                    <div class="text-gray-600 font-medium">Revenue Saved</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-indigo-600 font-semibold">TESTIMONIALS</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">What Our Customers Say</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-sm">Marketing Director</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"CouponSys has transformed our promotional campaigns. We've seen a 40% increase in customer retention since implementing their solution."</p>
+                    <div class="text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-gray-500 text-sm">E-commerce Manager</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"The analytics dashboard alone is worth the price. We've optimized our discount strategy based on the data and increased profits by 22%."</p>
+                    <div class="text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Emily Rodriguez</h4>
+                            <p class="text-gray-500 text-sm">Small Business Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-4">"As a small business, we needed an affordable solution that didn't compromise on features. CouponSys delivered beyond our expectations."</p>
+                    <div class="text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Coupon Strategy?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Join hundreds of businesses using our platform to drive sales and customer loyalty
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="login.php" 
+                   class="bg-white text-indigo-600 px-8 py-4 rounded-md font-bold hover:bg-indigo-50 transition duration-300 text-lg shadow-lg hover:shadow-xl">
+                    Get Started Now <i class="fas fa-rocket ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-indigo-600 font-semibold">FAQS</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-4">
+                    <div class="p-6 cursor-pointer flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-800">How secure is the coupon generation?</h3>
+                        <i class="fas fa-chevron-down text-indigo-600"></i>
+                    </div>
+                    <div class="px-6 pb-6 hidden">
+                        <p class="text-gray-600">Our system uses industry-standard encryption and unique algorithms to ensure all coupon codes are secure and cannot be duplicated or guessed. We also offer optional two-factor authentication for admin accounts.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-4">
+                    <div class="p-6 cursor-pointer flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-800">Can I integrate with my existing e-commerce platform?</h3>
+                        <i class="fas fa-chevron-down text-indigo-600"></i>
+                    </div>
+                    <div class="px-6 pb-6 hidden">
+                        <p class="text-gray-600">Yes! CouponSys offers seamless integrations with all major e-commerce platforms including Shopify, WooCommerce, Magento, and custom solutions through our API.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden mb-4">
+                    <div class="p-6 cursor-pointer flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-800">What kind of support do you offer?</h3>
+                        <i class="fas fa-chevron-down text-indigo-600"></i>
+                    </div>
+                    <div class="px-6 pb-6 hidden">
+                        <p class="text-gray-600">We provide 24/7 email support with a guaranteed response within 4 hours. Premium plans include live chat and phone support. All customers get access to our extensive knowledge base and video tutorials.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-ticket-alt text-2xl text-indigo-400"></i>
+                        <span class="font-bold text-xl">CouponSys</span>
+                    </div>
+                    <p class="text-gray-400">Powerful coupon management for modern businesses looking to drive growth and customer loyalty.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition duration-300">Features</a></li>
+                        <li><a href="#stats" class="text-gray-400 hover:text-white transition duration-300">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Integrations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Guides</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">API Status</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animated counter for stats
+        function animateValue(id, start, end, duration, prefix = '', suffix = '') {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = prefix + value.toLocaleString() + suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Initialize counters when stats section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateValue('couponsCreated', 0, 12500, 2000);
+                    animateValue('redemptionRate', 0, 78, 1500, '', '%');
+                    animateValue('activeCampaigns', 0, 42, 1000);
+                    animateValue('savedRevenue', 0, 325000, 2500, '$');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {threshold: 0.5});
+
+        observer.observe(document.querySelector('#couponsCreated').parentElement.parentElement.parentElement);
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.bg-white.rounded-xl.shadow-md .p-6').forEach(item => {
+            item.addEventListener('click', () => {
+                const content = item.nextElementSibling;
+                const icon = item.querySelector('i');
+                
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    content.classList.add('hidden');
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
